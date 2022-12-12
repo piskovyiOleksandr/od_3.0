@@ -1,0 +1,495 @@
+/* Profile Page */
+.profile {
+    width: 100%;
+}
+.profile .content {
+    padding: 20px;
+}
+.profile-wrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start
+}
+
+.profile-wrapper .pic {
+    order: 1;
+    width: 150px;
+    height: 150px;
+    margin: 0 35px 0 0;
+    padding: 0;
+    border-radius: 50%
+}
+
+.profile-control-buttons {
+    order: 3;
+    justify-content: center;
+    width: auto;
+    margin: 10px 0 0 0
+}
+
+.profile-control-buttons .button {
+    margin: 0 8px;
+    padding: 12px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 6%);
+    background-color: #FEFDF8;
+    border-radius: 22px;
+    transition: .3s
+}
+
+.profile-control-buttons .button:hover,
+.profile-control-buttons .button:active {
+    background-color: #F7F9EF
+}
+
+.profile-control-buttons .button .icons {
+    display: block;
+    width: 16px;
+    height: 18px;
+    margin-right: 8px;
+    background-color: transparent;
+    background-size: 272px 315px
+}
+
+.profile.chat-page .start-chat {
+    display: none
+}
+
+.profile-info {
+    order: 2;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 10px 70px 0 0
+}
+
+.profile-info .name {
+    padding: 0;
+    line-height: 32px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #000
+}
+
+.profile-info .status {
+    display: block;
+    margin: 0 0 8px 20px;
+    line-height: 1.5em;
+    font-size: 15px;
+    color: #A6B06A
+}
+
+.profile-info .age {
+    margin: 0 0 10px 20px;
+    line-height: 1.5em;
+    font-size: 16px;
+    color: #5E5F5D
+}
+
+.profile-info .profile-location {
+    line-height: 1.5em;
+    font-size: 14px;
+    color: #5E5F5D
+}
+
+.user-about {
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 60px 0
+}
+
+.user-about .single-item {
+    flex-grow: 0;
+    width: 120px;
+    margin: 0 15px
+}
+
+.user-about .description {
+    flex-grow: 2
+}
+
+.user-about .about {
+    flex-grow: 2
+}
+
+.chat-profile .user-about .status {
+    order: 1
+}
+
+.chat-profile .user-about .description {
+    order: 2
+}
+
+.chat-profile .user-about .about {
+    order: 3
+}
+
+.chat-profile .user-about .looking-for {
+    order: 4
+}
+
+.single-item {
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.single-item .label {
+    margin-bottom: 8px;
+    line-height: 1.2em;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000
+}
+
+.single-item .value {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+}
+
+.single-item.status .value {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 9px 11px 8px 11px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: #000;
+    background: #F3F7DF;
+    border-radius: 20px;
+}
+
+.single-item.status .value:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    background: url(/images/icons/_icons.svg) 7px 7px/ 408px no-repeat;
+    background-position: -75px -37px;
+    background-size: 238px 276px;
+}
+
+.single-item.description .value {
+    float: left;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    padding: 10px;
+    line-height: 1.2em;
+    font-size: 14px;
+    color: #000;
+    border: 1px solid #E2E3D8;
+    border-radius: 20px
+}
+
+.single-item.description .description-list {
+    flex-wrap: wrap;
+}
+
+.tab-wrapper {
+    margin: 60px 0
+}
+
+.tab-wrapper .tab {
+    position: relative;
+    margin-right: 20px;
+    padding-bottom: 22px;
+    line-height: 1.2em;
+    font-size: 16px;
+    font-weight: bold;
+    color: #5E5F5D;
+    cursor: pointer;
+    transition: .3s
+}
+
+.tab-wrapper .tab:hover,
+.tab-wrapper .tab.active {
+    color: #000
+}
+
+/* В .chat-page  переробив, буде змінено коли буде дизайн */
+.tab-wrapper .tab:before {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    height: 2px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    transition: .3s
+}
+
+.tab-wrapper .tab:hover:before,
+.tab-wrapper .tab.active:before {
+    background-color: #000
+}
+
+.tab-wrapper .tab-content {
+    display: none;
+    grid-auto-rows: 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px
+}
+
+.tab-wrapper .tab-content .image_wrapper {
+    width: 100%
+}
+
+.tab-wrapper .tab-content .story_wrapper {
+    position: relative;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden
+}
+
+.tab-wrapper .tab-content .story_wrapper .icon-play {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px
+}
+
+.tab-wrapper .tab-content .story_wrapper video {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.tab-wrapper .tab-content .story_wrapper .video-timer {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 10000
+}
+
+.tab-wrapper .tab-content.photos .image_wrapper {
+    position: relative;
+    height: 400px;
+    padding-bottom: 100%
+}
+
+.tab-wrapper .tab-content .image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    overflow: hidden
+}
+
+/* .tab-wrapper .tab-content.photos .image_wrapper img {height:500px;margin:0 auto} */
+
+.tab-wrapper .tab-content.active {
+    display: grid
+}
+
+.tab-wrapper .tab-content.stories {
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.tab-wrapper .tab-content.photos {
+    grid-template-columns: repeat(4, 1fr)
+}
+.profile-ad-block {
+    height: auto;
+    border-radius: 25px;
+    overflow: hidden
+}
+
+.profile-ad-block img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover
+}
+
+/* ---------- ajax-chat-item-profile ---------- */
+
+.backbtn-icon {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-position: -60px 2px;
+    z-index: 10;
+}
+
+.header.mobile {
+    background: #edefe3;
+    border-bottom: 1px solid #e2e3d8;
+    z-index: 10
+}
+.ttl {
+    display: block;
+    margin-left: 21px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+}
+
+/* .header-right {
+    justify-content: flex-end;
+} */
+
+.header.mobile .backbtn-icon {
+    filter: none;
+}
+.chat-page .header {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 25px;
+}
+.chat-page .backbtn-icon {
+    display: block;
+}
+.chat-page .content {
+    padding: 0
+}
+.chat-page .profile-wrapper {
+    flex-direction: column;
+}
+.chat-page .profile-wrapper .pic {
+    position: relative;
+    width: 100%;
+    height: 284px;
+    margin: 0 0 46px 0;
+    border-radius: 0 0 25px 25px;
+    order: 0;
+}
+.chat-page .profile-control-buttons {
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    margin: 0;
+}
+.chat-page .profile-info {
+    margin: 0;
+    padding: 0 20px;
+    order: 0;
+}
+
+.chat-page .profile-info .name {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+}
+.chat-page .profile-info .status {
+    margin: 0 0 8px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #A6B06A;
+}
+.chat-page .profile-info .age,
+.chat-page .profile-info .profile-location {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #5E5F5D;
+}
+.chat-page .profile-info .profile-location {
+    margin-bottom: 16px;
+}
+.chat-page .user-about {
+    flex-direction: column;
+    margin: 0;
+    padding: 0 20px;
+}
+.chat-page .user-about .single-item {
+    width: 100%;
+    margin: 0 0 16px 0;
+}
+.chat-page .user-about .single-item .label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+}
+.chat-page .user-about .single-item .value {
+    margin: 0;
+}
+.chat-page .user-about .description {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.chat-page .user-about .description .label {
+    flex-basis: 100%;
+}
+.chat-page .user-about .single-item.looking-for .value,
+.chat-page .user-about .single-item.about .value {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #5E5F5D;
+}
+.chat-page .tab-wrapper {
+    margin: 0;
+    padding: 0 20px 20px;
+}
+.chat-page .tab-wrapper .tabs {
+    padding: 0 0 20px;
+}
+.chat-page .tab-wrapper .tab {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: center;
+    color: #5E5F5D;
+    transition: all .3s ease 0s;
+    border-bottom: 2px solid #e2e3d8;
+    cursor: pointer;
+}
+.chat-page .tab-wrapper .tab.active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+.chat-page .tab-wrapper .tab::before {
+    display: none;
+}
+.chat-page .tab-wrapper .tab-content {
+    grid-column-gap: 8px;
+    grid-row-gap: 8px
+}
+.chat-page .tab-wrapper .tab-content.stories {
+    grid-template-columns: repeat(2, 1fr)
+}
+.chat-page .tab-wrapper .tab-content .story_wrapper {
+    height: 270px;
+}
+.chat-page .tab-wrapper .tab-content.photos {
+    grid-template-columns: repeat(3, 1fr)
+}
+.chat-page .tab-wrapper .tab-content.photos .image_wrapper {
+    padding: 0;
+}
+.chat-page .tab-wrapper .tab-content .image_wrapper {
+    height: 170px;
+}
+
+
+.chat-page .profile-ad-block {
+    display: none;
+}
+
+.profile.chat-page .column-80 {
+    width: 100%
+}

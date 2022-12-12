@@ -1,0 +1,358 @@
+/* Matches page */
+
+.grid {
+    display: grid
+}
+
+.matches-grid {
+    grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+    /* grid-template-columns: repeat(4, 300px);
+    grid-auto-rows: 300px; */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.single-grid-item {
+    
+}
+
+.single-grid-item .single-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100;
+}
+
+.single-grid-item .person-info-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.single-grid-item .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.single-grid-item .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.single-grid-item .person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.single-grid-item .person-info .name {
+    display: flex;
+    margin-bottom: 2px;
+    line-height: 1.2em;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000
+}
+
+.icon-fire {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-position: -320px -64px
+}
+
+.icon-like {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-position: -128px -258px;
+    background-color: transparent
+}
+
+.single-grid-item .person-info .status {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin-left: 2px;
+    background-color: transparent;
+    background-size: 340px 394px;
+    background-position: -267px -54px
+}
+
+.single-grid-item .person-info .city {
+    line-height: 1.4em;
+    font-size: 14px;
+    color: #5E5F5D
+}
+
+.single-grid-item .close-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 0px;
+    margin-left: auto;
+    background-position: -64px 0px;
+    cursor: pointer
+}
+
+.single-grid-item .photos-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin-bottom: 15px;
+    /* padding-bottom: calc(100% - 80px); */
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.single-grid-item .photos-wrapper .count {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 1px 4px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    z-index: 10
+}
+
+.single-grid-item .photos-wrapper img {
+    /* position: absolute;
+    top: 0px;
+    left: 0px; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.single-grid-item .person-settings {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.single-grid-item .person-settings .person-setting-btn {
+    position: relative;
+    margin: 0px;
+}
+
+.single-grid-item .person-settings .message-icon {
+    width: 24px;
+    height: 24px;
+    background-position: -384px -450px
+}
+
+.single-grid-item .person-settings .message-icon a {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+.single-grid-item .ads-website {
+    display: flex;
+    align-items: center;
+    margin-left: auto
+}
+
+.world-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-position: -256px -128px;
+    background-color: transparent
+}
+
+.single-grid-item .ads-website .world-icon {
+    margin-right: 4px
+}
+
+.single-grid-item .ads-website .label {
+    line-height: 1.2em;
+    font-size: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5677E0
+}
+
+
+
+/* ---------- FIND-MATCHES_PAGE ---------- */
+.content.matches {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 15px;
+    overflow: hidden;
+}
+.matches .mrzv-link-ajax.open-filter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.matches-find {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    /* width: 400px; */
+    /* height: 100%; */
+    /* margin: 0 auto; */
+    /* overflow: scroll; */
+}
+
+.matches-find::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.matches-list {
+    /* position: relative; */
+    max-width: 440px;
+    width: 100%;
+    min-height: 100%;
+}
+
+.matches-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #edefe3;
+    z-index: 1000; */
+}
+.matches-element .header {
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-left: 0;
+    border-bottom: none;
+}
+.matches-element .header .pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.matches-element .person-info .name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+.matches-element .person-info .city {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 130%;
+    color: #5E5F5D;
+}
+
+.matches-element .pics {
+    position: relative;
+    width: 100%;
+    max-height: 575px;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.swiper-find-matches {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-find-matches img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.swiper-find-matches .swiper-pagination {
+    top: 10px;
+    left: initial;
+    right: 13px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+}
+.swiper-find-matches .swiper-pagination-current,
+.swiper-find-matches .swiper-pagination-total {
+    color: #FFFFFF;
+}
+
+.swiper-find-matches .swiper-button-prev:after, 
+.swiper-find-matches .swiper-button-next:after {
+    content: none;
+}
+/* .matches-element .pics .img {
+    width: 100%;
+    height: 575px;
+    background-position: center center !important;
+    background-size: cover !important;
+} */
+
+.matches-element .pics .icon-add {
+    position: absolute;
+    bottom: 30px;
+    right: 32%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #e2e3d8;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+}
+.matches-element .pics .icon-fire {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-position: -312px -56px;
+}
+
+.matches-element .pics .icon-del {
+    position: absolute;
+    bottom: 30px;
+    left: 32%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+}
+.matches-element .pics .icon-add:hover,
+.matches-element .pics .icon-del:hover {
+}
+
+.matches-element .link {
+    height: 50px;
+    margin-top: 15px;
+    line-height: 50px;
+    background: #FEFDF8;
+}

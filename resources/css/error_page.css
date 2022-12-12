@@ -1,0 +1,38 @@
+
+.error-cnt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: inherit;
+}
+.error-pic {
+    margin-bottom: 55px;
+}
+.error-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.error-ttl {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 36px;
+}
+.error-txt {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #5e5f5d;
+}
+.btn-error-home {
+    padding: 12px 24px;
+    width: fit-content;
+    background: #dbea8d;
+    border-radius: 30px;
+}

@@ -1,0 +1,53 @@
+/* Main Block */
+
+.main {
+    float: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+}
+
+.column-left {
+    position: relative;
+    flex-shrink: 0;
+    max-width: 420px;
+    width: 100%;
+    border-right: 1px solid #e2e3d8
+}
+.main.column-left .header {
+    padding: 20px 0 16px 23px
+}
+.column-center {}
+
+.column-center .content {
+    height: calc(100% - 60px)
+}
+
+.column-right {
+    position: absolute;
+    right: -100%;
+    width: 400px;
+    border-left: 1px solid #e2e3d8
+}
+
+.column-right.open {
+    right: 0
+}
+
+.main h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+}
+
+.main .content-in {
+    padding: 20px
+}
+
+.main .content .pic {
+    background-position: center center !important;
+    background-size: cover !important
+}

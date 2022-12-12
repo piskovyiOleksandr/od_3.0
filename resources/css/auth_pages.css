@@ -1,0 +1,156 @@
+.main-auth {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 155px;
+    background-color: #e5e5e5;
+}
+.auth-pic,
+.auth-form {
+    display: grid;
+    justify-items: center;
+}
+.auth-pic img {
+    max-width: 403px;
+    max-height: 443px;
+    object-fit: cover;
+}
+.form-wrap {
+    width: 100%;
+    max-width: 550px;
+}
+.login .ttl, 
+.registration .ttl {
+    margin-left: 0;
+    margin-bottom: 48px;
+    font-family: "Signika";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 32px;
+    text-align: center;
+}
+.login form, 
+.registration form {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 40px 60px 24px;
+    background: #fefdf8;
+    border-radius: 25px;
+}
+.btn-auth,
+.success-reg .btn-cnt {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    background: #dbea8d;
+    border-radius: 30px;
+    cursor: pointer;
+}
+a.forgot {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5677e0;
+    text-align: center;
+}
+.form-bottom {
+    width: 100%;
+    padding: 25.5px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: center;
+    background: #fefdf8;
+    border-radius: 25px;
+}
+.form-bottom a {
+    color: #5677e0;
+}
+
+.modal-auth {
+    width: 100%;
+}
+.modal-auth  .header-left {
+    margin-left: 20px;
+}
+.modal-auth .backbtn-icon {
+    display: block;
+}
+.modal-auth-form-wrap {
+    padding: 0 20px;
+    height: calc(100% - 120px);
+}
+.m-sign-in {
+    display: none;
+}
+.modal-auth-form-wrap.m-sign-in {
+    height: calc(100% - 100px);
+}
+.modal-auth form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.modal-auth input.checkbox +label {
+    flex-wrap: wrap;
+}
+.modal-auth .form-bottom {
+    padding: 0;
+    background: transparent;
+}
+.modal-auth .form-bottom .btn-auth {
+    margin-bottom: 12px;
+}
+.modal-auth .pp {
+    display: inline-block;
+    margin-left: 30px !important;
+}
+
+.success-reg {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 100px);
+    padding: 0 20px;
+}
+.success-reg .pic {
+    width: 320px;
+    height: 320px;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+.success-reg .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.success-reg .ttl {
+    margin-left: 0;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+}
+.success-reg .txt {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #5E5F5D;
+}
+.success-reg .btn-cnt {
+    margin: auto 0 16px 0;
+}

@@ -1,0 +1,161 @@
+/* Chat pop-up & notifications */
+
+.popup-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    opacity: 0;
+    z-index: 1000000
+}
+
+.popup {
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 400px;
+    background: #fff;
+    border-radius: 25px;
+    z-index: 1000001
+}
+
+.popup-in {
+    padding: 30px
+}
+
+.popup .close_btn {
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-position: -64px 0px;
+    background-size: 408px 472px
+}
+
+.popup .title {
+    padding: 0 0 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000
+}
+
+.popup .message {
+    margin-bottom: 20px;
+    line-height: 1.4em;
+    text-align: center;
+    font-size: 16px;
+    color: #5E5F5D
+}
+
+.popup .btn-wrapper {
+    justify-content: space-evenly
+}
+
+.popup-matches {
+    margin: 0 0 20px;
+    overflow: hidden
+}
+
+.popup-matches .pic {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background-position: center center !important;
+    background-size: cover !important
+}
+
+.popup-matches .name {
+    line-height: 50px;
+    font-size: 18px
+}
+
+.notifications-popup {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    width: calc(100% - 40px);
+    max-width: 450px;
+    padding: 16px 40px 16px 16px;
+    transform: translate(-50%, -100px);
+    opacity: 0;
+    background: #FEFDF8;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 6%), 0px 2px 4px rgb(0 0 0 / 6%);
+    border-radius: 16px;
+    transition: .4s;
+    z-index: 100
+}
+
+.notifications-popup.active {
+    transform: translate(-50%, 0px);
+    opacity: 1
+}
+
+.notifications_wrapper {
+    display: flex
+}
+
+.notifications_wrapper .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.notifications_wrapper .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.notifications_wrapper .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.notifications_wrapper .description-wrapper .name {
+    margin-bottom: 4px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000
+}
+
+.notifications_wrapper .description-wrapper .message {
+    line-height: 1.4em;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000
+}
+
+.notifications_wrapper .description-wrapper .matched {
+    max-width: 200px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #5E5F5D
+}
+
+.notifications_wrapper .description-wrapper .matched strong {
+    font-weight: bold;
+    color: #000
+}
+
+.close_btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-size: 272px 315px;
+    background-position: -43px 0px;
+    background-color: transparent
+}

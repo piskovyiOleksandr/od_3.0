@@ -1,0 +1,140 @@
+/* custom ajax */
+
+.mrzv-link-ajax {
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer
+}
+
+.mrzv-link-ajax:hover {
+    color: rgba(0, 0, 0, .9);
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s
+}
+
+.mrzv-overlay {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .7;
+    z-index: 100000;
+
+    background: rgb(219,234,141);
+    background: radial-gradient(circle, rgba(219,234,141,1) 0%, rgba(255,239,213,1) 100%);
+}
+
+#mrzv-overlay-2 {
+    z-index: 100002
+}
+
+.mrzv-popup-1,
+.mrzv-popup-2 {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    border-left: 1px solid #E2E3D8;
+    background: #EDEFE3;
+    /* box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5); */
+    box-sizing: border-box;
+}
+
+.mrzv-popup-1 {
+    right: -500px;
+    width: 100%;
+    max-width: 360px;
+    z-index: 100001
+}
+
+.mrzv-popup-2 {
+    right: calc(-30% + 60px);
+    width: calc(30% - 60px);
+    z-index: 100002
+}
+
+.mrzv-popup-in {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.mrzv-popup-close {
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    cursor: pointer;
+    box-sizing: border-box
+}
+
+.mrzv-popup-close:hover {}
+
+.mrzv-popup-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.mrzv-popup-content-in {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.mrzv-popup-preloader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #f2f2f2;
+    z-index: 1010
+}
+
+.mrzv-popup-preloader-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent url("../images/ajax-loader.gif") center center no-repeat
+}
+
+.mrzv-popup-order-content-block {
+    display: block;
+    margin: auto
+}
+
+.mrzv-ajax-load-block {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden
+}
+
+.mrzv-ajax-load-block.index {
+    min-height: 2499px;
+}
+
+.mrzv-ajax-preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    z-index: 1010;
+}
+
+.mrzv-ajax-preloader-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent url("../images/ajax-loader.gif") center center no-repeat
+}

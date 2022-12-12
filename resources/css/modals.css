@@ -1,0 +1,561 @@
+/* Modals */
+
+.slider {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    /* -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none */
+}
+
+.slides {
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s
+}
+
+.prev,
+.next { 
+    display: none !important;
+    position: absolute;
+    top: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    line-height: 86px;
+    text-align: center;
+    font-size: 50px;
+    opacity: 0;
+    border: 1px solid #fff;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.prev:hover,
+.next:hover {
+    color: #fff;
+    border: 1px solid #fff;
+    background: none
+}
+
+.prev {
+    left: 20px
+}
+
+.next {
+    right: 20px
+}
+
+.slider:hover .prev,
+.slider:hover .next {
+    opacity: 1
+}
+
+#nav-btns {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center
+}
+
+.slide-nav-btn {}
+
+.slide-nav-btn:hover {
+    cursor: pointer
+}
+
+.slide-nav-btn.active {}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100
+}
+
+.overlay.show {
+    display: block
+}
+
+.overlay.dark {
+    background: rgba(0, 0, 0, .95)
+}
+
+.modal {
+    width: 100%;
+    height: 100%
+}
+
+.modal .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10
+}
+
+.modal-photos,
+.modal-stories {
+    display: none
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0 0
+}
+
+.modal-chat-page .modal-stories .modal-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px
+}
+
+.modal-header .modal-header-left {
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff
+}
+
+.modal-header .count {
+    margin-left: 20px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff
+}
+
+.modal-header .count>span {
+    color: #fff
+}
+
+.modal-header .modal-header-right {}
+
+.modal-container {
+    width: calc(100% - 120px);
+    height: calc(100% - 160px);
+    margin: 0 auto
+}
+
+.modal-stories-container {
+    width: calc(100% - 120px);
+    height: calc(100% - 160px);
+    margin: 0 auto;
+    opacity: 0
+}
+
+.modal-chat-page .modal-stories-container {
+    height: 100%
+}
+
+.modal-stories-container .modal-container {
+    width: 100% !important;
+    height: 100%
+}
+
+/* .modal-stories .modal-container {position:relative;width:calc(100% - 120px);height:calc(100vh - 160px);z-index:5;overflow:hidden} */
+.modal-stories .slides .story_wrapp {
+    float: left;
+    position: relative;
+    display: block;
+    height: calc(100vh - 160px);
+    text-align: center
+}
+
+.modal-chat-page .modal-stories .slides .story_wrapp {
+    height: 100%;
+    margin: 10px 0
+}
+
+.modal-stories .slides .story {
+    position: relative;
+    display: inline-block;
+    height: 100%
+}
+
+.story-profile {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    width: 56px;
+    height: 56px;
+    z-index: 1;
+}
+
+.story-profile:hover {
+    opacity: .7
+}
+
+.story-profile .avatar-wrapp {
+    width: 64px;
+    height: 64px;
+    padding: 3px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #608972
+
+}
+
+.story-profile .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-position: center center !important;
+    background-size: cover !important
+}
+
+.story-profile .name {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.modal-stories .slides video {
+    display: block;
+    width: auto;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden
+}
+
+.modal-stories .slides .story_wrapp .video-timer {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 10000
+}
+
+.video-progressbar {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 28px);
+    height: 3px;
+    background: #E2E3D8;
+    opacity: 0.7;
+    border-radius: 21px;
+    overflow: hidden;
+}
+
+.positionBar {
+    width: 0;
+    height: 4px;
+    background: white;
+    transition: width .5s linear
+}
+
+
+.modal-stories .story_wrapp .controls {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.controls .icon-play,
+.controls .icon-pause,
+.controls .icon-mute-on,
+.controls .icon-mute-off {
+    /* float: left; */
+    width: 12px;
+    height: 14px;
+    margin: 0 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer
+}
+
+.controls .icon-play:hover,
+.controls .icon-pause:hover,
+.controls .icon-mute-on:hover,
+.controls .icon-mute-off:hover {
+    border-bottom: 2px solid #fff
+}
+
+.modal-footer {
+    width: 100%;
+    height: 100px;
+    padding: 10px 0 0
+}
+
+.flex-viewport {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center
+}
+
+.modal-photos .slides .img {
+    float: left;
+    display: block;
+    height: calc(100vh - 160px)
+}
+
+.modal-photos .slides .img img {
+    display: block;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden
+}
+
+.modal .modal-footer .image {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 0 4px;
+    opacity: 0.4;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 2px transparent;
+    overflow: hidden
+}
+
+.modal .modal-footer .image video {
+    display: block;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden
+}
+
+.modal-photos .modal-footer .image {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 0 4px;
+    opacity: 0.4;
+    border-radius: 12px;
+    background-position: center center !important;
+    background-size: cover !important;
+    overflow: hidden
+}
+
+.modal .modal-footer .image:hover,
+.modal .modal-footer .image:active,
+.modal .modal-footer .image:focus,
+.modal .modal-footer .image.active {
+    opacity: 1;
+    cursor: pointer
+}
+
+@media only screen and (min-width:200px) and (max-width:550px) {
+
+    .prev,
+    .next {
+        top: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        line-height: 58px;
+        font-size: 38px
+    }
+
+    .prev {
+        left: 4px
+    }
+
+    .next {
+        right: 4px
+    }
+
+    .modal {
+        margin: 0;
+        padding: 0
+    }
+
+    .modal .close-icon {
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px
+    }
+
+    .modal .modal-header {
+        height: 40px;
+        padding: 0
+    }
+
+    .modal .modal-header .modal-header-left {
+        line-height: 40px;
+        font-size: 20px
+    }
+
+    .modal .modal-header .count-photos {
+        line-height: 40px;
+        font-size: 18px
+    }
+
+    .modal-container {
+        width: 100%;
+        height: calc(100% - 110px)
+    }
+
+    .modal-stories-container {
+        width: 100%;
+        height: calc(100% - 110px)
+    }
+
+    .modal-stories .slides .story_wrapp {
+        height: calc(100vh - 110px)
+    }
+
+    .modal-stories .slides .story_wrapp video {
+        height: calc(100% - 0px)
+    }
+
+    .modal-photos .slides .img {
+        max-width: 100%;
+        height: calc(100vh - 110px)
+    }
+
+    .modal-photos .slides .img img {
+        max-width: 100%;
+        height: calc(100% - 0px)
+    }
+
+    .modal-footer {
+        height: 80px;
+        padding: 5px 0 0
+    }
+
+    .modal-footer .flex-viewport {
+        width: 100%;
+        overflow-x: auto
+    }
+
+    .modal .modal-footer .image {
+        width: 60px;
+        height: 60px;
+        margin: 0 2px
+    }
+
+    .modal-photos .modal-footer .image {
+        width: 60px;
+        height: 60px;
+        margin: 0 2px
+    }
+}
+
+/* .modal-stories .single-stories-nav-time {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    transition: .3s
+}
+
+.modal-stories .modal-header .stories_icon {
+    display: none;
+    width: 24px;
+    height: 24px;
+    margin-top: 10px;
+    background-color: transparent;
+    *filter: invert(100%) sepia(93%) saturate(27%) hue-rotate(98deg) brightness(106%) contrast(109%)
+}
+
+.modal-stories .modal-header .pause_icon {
+    background-position: -256px -320px
+}
+
+.modal-stories .modal-header .sound_icon {
+    background-position: -127px -320px
+}
+
+.modal-stories .modal-image-wrapper {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%
+}
+
+.modal-stories .modal-image-wrapper .user-profile-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    display: none
+}
+
+.modal-stories .modal-image-wrapper .user_photo {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 2px;
+    border-radius: 50%;
+    border: 2px solid #b2d5ba;
+    box-sizing: border-box
+}
+
+.modal-stories .modal-image-wrapper .user_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%
+}
+
+.modal-stories .modal-image-wrapper .name {
+    margin-top: 4px;
+    line-height: 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff
+}
+
+.modal-stories .modal-image-wrapper .stories_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.modal-stories .modal-header .stories_icon {
+    display: block;
+    margin-left: 20px
+}
+
+.modal-stories .modal-image-wrapper .stories_image {
+    opacity: 0.6;
+    filter: blur(32px)
+}
+
+.modal-stories .modal-image-wrapper.active .stories_image {
+    opacity: 1;
+    filter: blur(0px)
+} */
+
+
+
