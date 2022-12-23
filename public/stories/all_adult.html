@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Story Player (Non-AMP)</title>
+    <script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+    <link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css" />
+    <style page>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+    <style injected>
+        .story-player-iframe {
+            background-size: cover;
+            display: block;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            flex: 0 0 100%;
+        }
+
+        .title {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+            font-size: 40px;
+            padding: 88px 32px 32px 32px;
+            line-height: 1.25;
+            text-shadow: 3px 3px #000;
+        }
+
+        .pl {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .actions .circle {
+            width: 65px;
+            height: 65px;
+            background-size: cover;
+            overflow: hidden;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            box-shadow:
+                0 0 0 3px white,
+                0 0 0 7px hsl(20, 79%, 60%);
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+            box-sizing: border-box;
+            text-shadow: 0px 2px 4px #000000;
+            cursor: pointer;
+        }
+
+        .actions .circle.active {
+            box-shadow:
+                0 0 0 3px white,
+                0 0 0 7px hsl(257, 79%, 60%);
+        }
+    </style>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script>
+        window.onload = () => {
+            const player = document.querySelector('amp-story-player');
+            document.querySelector('.actions').addEventListener('click', (e) => {
+                if (e.target.hasAttribute('data-story')) {
+                    player.show(e.target.getAttribute('data-story'), null, { animate: false });
+                }
+            })
+            player.addEventListener('navigation', (e) => {
+                document.querySelectorAll('.actions .circle').forEach((circle, index) => {
+                    circle.classList.toggle('active', index === e.detail.index)
+                })
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="pl">
+            <amp-story-player style="width: 360px; height: 600px;">
+                <a href="/stories/amp_adult_1.html" class="story">
+                    <!-- <img data-amp-story-player-poster-img src="" width="360" height="600" loading="lazy"> -->
+                </a>
+                <a href="/stories/amp_adult_2.html" class="story">
+                    <!-- <img data-amp-story-player-poster-img src="" width="360" height="600" loading="lazy"> -->
+                </a>
+                <a href="/stories/amp_adult_3.html" class="story">
+                    <!-- <img data-amp-story-player-poster-img src="" width="360" height="600" loading="lazy"> -->
+                </a>
+                <a href="/stories/amp_adult_4.html" class="story">
+                    <!-- <img data-amp-story-player-poster-img src="" width="360" height="600" loading="lazy"> -->
+                </a>
+                <a href="/stories/amp_adult_5.html" class="story">
+                    <!-- <img data-amp-story-player-poster-img src="" width="360" height="600" loading="lazy"> -->
+                </a>
+
+            </amp-story-player>
+        </div>
+
+
+        <div class="actions">
+            <div class="circle active" data-story="http://127.0.0.1:5500/stories/amp_adult_1.html"
+                style="background-image: url('https://assets.topsrcs.com//profiles_video/131/img_4.jpg')">
+                New York
+            </div>
+            <div class="circle" data-story="http://127.0.0.1:5500/stories/amp_adult_2.html"
+                style="background-image: url('https://assets.topsrcs.com//profiles_video/132/img_4.jpg')">
+                Miami
+            </div>
+            <div class="circle" data-story="http://127.0.0.1:5500/stories/amp_adult_3.html"
+                style="background-image: url('https://assets.topsrcs.com//profiles_video/133/img_4.jpg')">Mexico City
+            </div>
+            <div class="circle" data-story="http://127.0.0.1:5500/stories/amp_adult_4.html"
+                style="background-image: url('https://assets.topsrcs.com//profiles_video/134/img_4.jpg')">
+                Rome
+            </div>
+            <div class="circle" data-story="http://127.0.0.1:5500/stories/amp_adult_5.html"
+                style="background-image: url('https://assets.topsrcs.com//profiles_video/135/img_4.jpg')">
+                Rome
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

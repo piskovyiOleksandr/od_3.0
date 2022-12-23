@@ -44,6 +44,43 @@
 	</div>
 	@endif
 
+	<!-- Мої стратр -->
+	@if ( count( $filter_goal ) > 0 )
+	<div class="select-box">
+		<div class="selected">
+			<div class="selected-label">I'm looking for</div>
+			<div class="selected-value"></div>
+		</div>
+		<div class="options-container">
+			<?php foreach ($filter_goal as $goal) { ?>
+				<div class="option" <?= isset($_COOKIE['matches-filter-goal']) ? ($_COOKIE['matches-filter-goal'] == $goal['id'] ? 'selected' : '') : '' ?>>
+					<input type="text" class="option-value" id="<?= $goal['id'] ?>" value="<?= $goal['name'] ?>" />
+					<label for="<?= $goal['name'] ?>"><?= $goal['name'] ?></label>
+				</div>
+			<?php } ?>
+		</div>
+	</div>
+	@endif
+
+	@if ( count( $filter_type ) > 0 )
+	<div class="select-box">
+		<div class="selected">
+			<div class="selected-label">Preferenses</div>
+			<div class="selected-value"></div>
+		</div>
+		<div class="options-container">
+			<?php foreach ($filter_type as $type) { ?>
+				<div class="option" <?= isset($_COOKIE['matches-filter-type']) ? ($_COOKIE['matches-filter-type'] == $type['id'] ? 'selected' : '') : '' ?>>
+					<input type="text" class="option-value" id="<?= $type['id'] ?>" value="<?= $type['name'] ?>" />
+					<label for="<?= $type['name'] ?>"><?= $type['name'] ?></label>
+				</div>
+			<?php } ?>
+		</div>
+	</div>
+	@endif
+
+	<!-- Мої фініш -->
+
 	<div class="range-slider">
 		<div class="age">
 			<span class="name">Age</span>
@@ -54,19 +91,19 @@
 
 	<div class="filter-others">
 
-		<div class="chekbox-wrap">
+		<div class="checkbox-wrap">
 			<input id="with_photo" class="checkbox" type="checkbox" value="" checked>
 			<label for="with_photo">With photo</label>
 		</div>
 
-		<div class="chekbox-wrap">
-			<input id="verified_user" class="checkbox" type="checkbox" value="">
-			<label for="verified_user">Verified user</label>
+		<div class="checkbox-wrap">
+			<input id="verified" class="checkbox" type="checkbox" value="" >
+			<label for="verified">Verified user</label>
 		</div>
 
 	</div>
 
-	
+
 
 	<!-- <div class="filter-clear">Clear</div> -->
 

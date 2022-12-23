@@ -15,10 +15,12 @@
 	</div>
 	<div class="content">
 		<div class="stories-block flex" id="stories-list">
+	
 			<div class="stories-block-user-story" onclick="mrzv_popup('/popup/chat', '')">
 				<div class="stories-block-name">My Story</div>
 			</div>
 			<div class="icons story-list-icon"></div>
+			
 		</div>
 
 		<div class="chats-block-nav">
@@ -113,9 +115,6 @@
 <!-- <script src="{{ asset('/public/js/chat.js') }}" type="text/javascript" defer></script> -->
 
 <script src="{{ asset('/js/chat.js') }}" type="text/javascript" defer></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script type="text/javascript" defer>
 	function load_chat(id) {
@@ -154,5 +153,7 @@
 		<?php endif ?>
 	}
 </script>
+
+
 
 @endsection

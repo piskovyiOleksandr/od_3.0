@@ -143,18 +143,17 @@
 	<!-- Мої фініш -->
 
 	<div class="filter-others">
-		<!-- <input type="checkbox" id="" value="" checked /> With photo
-				<input type="checkbox" id="" value="" /> Verified user -->
 
 		<div class="checkbox-wrap">
-			<input type="checkbox" class="checkbox" checked>
-			<label class="checkbox-label">With photo</a></label>
+			<input id="with_photo" class="checkbox" type="checkbox" value="" checked>
+			<label for="with_photo">With photo</label>
 		</div>
 
 		<div class="checkbox-wrap">
-			<input type="checkbox" class="checkbox" checked>
-			<label class="checkbox-label">Verified user</label>
+			<input id="verified" class="checkbox" type="checkbox" value="" checked>
+			<label for="verified">Verified user</label>
 		</div>
+
 	</div>
 
 

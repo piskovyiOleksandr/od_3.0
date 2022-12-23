@@ -15,10 +15,12 @@
 	</div>
 	<div class="content">
 		<div class="stories-block flex" id="stories-list">
+	
 			<div class="stories-block-user-story" onclick="mrzv_popup('/popup/chat', '')">
 				<div class="stories-block-name">My Story</div>
 			</div>
 			<div class="icons story-list-icon"></div>
+			
 		</div>
 
 		<div class="chats-block-nav">
@@ -113,9 +115,6 @@
 <!-- <script src="<?php echo e(asset('/public/js/chat.js')); ?>" type="text/javascript" defer></script> -->
 
 <script src="<?php echo e(asset('/js/chat.js')); ?>" type="text/javascript" defer></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 <script type="text/javascript" defer>
 	function load_chat(id) {
@@ -154,6 +153,8 @@
 		<?php endif ?>
 	}
 </script>
+
+
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout/layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\_aproachX\OD_3.0_all\OD_3.0_mix_dev_swiper\resources\views/chat_page/chat.blade.php ENDPATH**/ ?>

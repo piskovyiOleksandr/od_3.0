@@ -1,0 +1,28 @@
+134.122.67.52
+alexandr_p
+mtU4CLlLgTqd577G
+
+134.122.67.52:8083
+DB_DATABASE=alexandr_26098
+DB_USERNAME=alexandr_26098
+DB_PASSWORD=r4Jff6nZTxfbXA8L
+
+composer require league/flysystem "1.1.9" --ignore-platform-req=ext-fileinfo
+
+3306
+
+https://testmashine.topsrcs.com/phpmyadmin/
+
+DB_DATABASE=alexandr_test
+DB_USERNAME=alexandr_test
+DB_PASSWORD=r4Jff6nZTxfbXA8L
+
+https://www.figma.com/file/UsnI1z4ScIf5RJgdTwqM3s/Cats-Matches-Final?node-id=1007%3A28659
+
+icons: https://www.figma.com/file/bCEfJU0Iw6wJkc6GVanrzQ/Untitled?node-id=0%3A1&t=BJyZ5Rsk4oFI1X4Z-0
+
+Питання:
+1. На сторінці чат є прочитані і не прочаті повідомлення у дизайні відсутні! Який вірний варіант? 
+2. Після отримання всіх повідомлень залишається кількість загальних повідомлень!
+3. На сторінці чату при відкритті профайла відсутній дизайн частини інформації (відео фото)! Також присутні кнопки спам і чат, на даний момент залишина одна, можливо потрібно всетаки дві?
+4. На сторінці пошук матчес в дестоп на даний момент є кнопка фільтра яка відкриває фільтрацію у дизайні відображено ніби він постійно повинен бути відкритий? Як вірно?

@@ -82,6 +82,7 @@
 		height: 100%;
 		object-fit: cover;
 	}
+
 	.profilePhotoSwiperTop .swiper-pagination,
 	.profileVideoSwiper .swiper-pagination {
 		bottom: initial;
@@ -123,6 +124,12 @@
 
 	.profileVideoSwiper video::-webkit-media-controls-mute-button {
 		margin-right: auto;
+	}
+	.controls {
+		position: absolute;
+		top: 50%;
+		display: flex;
+		z-index: 100;
 	}
 </style>
 <div class="main profile flex">
@@ -176,7 +183,7 @@
 
 			<div class="tab-wrapper">
 				<div class="tabs flex">
-					<div class="tab stories active" data-tab="stories"><?= count($stories) ?> Stories</div>
+					<div class="tab stories active" data-tab="stories"><?= count($stories) ?> Videos</div>
 					<div class="tab photos" data-tab="photos"><?= count($img) ?> Photos</div>
 				</div>
 
@@ -264,10 +271,11 @@
 				<div class="swiper-wrapper">
 					@foreach ( $stories as $item )
 					<div class="swiper-slide">
-						<video id="video-<?= $item['id'] ?>" preload="metadata" playsinline="" autoplay="" controls="" controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture="">
+						<video id="video-<?= $item['id'] ?>" controls preload="metadata" playsinline="" controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture="">
 							<source src="<?= $item['src'] ?>" type="video/mp4">
 							</source>
 						</video>
+
 					</div>
 					@endforeach
 				</div>
@@ -294,11 +302,8 @@
 
 @section('script')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<link rel="stylesheet" href="{{ asset('/css/video-js.min.css') }}" />
-
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="{{ asset('/js/video.min.js') }}"></script>
+
 <script>
 	let profilePhotoSwiperBottom = new Swiper(".profilePhotoSwiperBottom", {
 		loop: true,
@@ -309,6 +314,14 @@
 	})
 
 	let profilePhotoSwiperTop = new Swiper(".profilePhotoSwiperTop", {
+		effect: "cube",
+		grabCursor: true,
+		cubeEffect: {
+			shadow: true,
+			slideShadows: true,
+			shadowOffset: 20,
+			shadowScale: 0.94,
+		},
 		loop: true,
 		spaceBetween: 10,
 		navigation: {
@@ -324,7 +337,9 @@
 		},
 	})
 
-	var swiper = new Swiper('.profileVideoSwiper', {
+	let activeVideo
+	let aV
+	var profileVideoSwiper = new Swiper('.profileVideoSwiper', {
 		effect: "cube",
 		grabCursor: true,
 		cubeEffect: {
@@ -342,6 +357,45 @@
 			prevEl: ".swiper-button-prev.pvs-btn-prev",
 		},
 		loop: true,
-	});
+		on: {
+			transitionEnd: function() {
+				let allVideos = document.querySelectorAll('.profileVideoSwiper video')
+				console.log('All videos:')
+				console.log(allVideos)
+				allVideos.forEach(element => {
+					if (element.parentNode.classList.contains("swiper-slide-visible")) {
+						aV = element
+						element.play()
+						aV.addEventListener('ended', () => {
+							profileVideoSwiper.slideNext()
+						})
+					} else {
+						element.pause()
+					}
+				})
+			},
+			touchStart: () => {
+				console.log('touchStart')
+				aV.pause()
+			},
+			touchEnd: () => {
+				console.log('touchStart')
+				aV.play()
+			},
+		}
+	})
+	let storyWrapper = document.querySelector('.story_wrapper')
+	storyWrapper.addEventListener('click', () => {
+		console.log('click')
+		let visibleSlider = document.querySelectorAll('.profileVideoSwiper')[0]
+		if (visibleSlider.offsetParent === null) {
+			console.log('visibleSlider')
+			activeVideo = document.querySelectorAll('.profileVideoSwiper video')[1]
+			activeVideo.play()
+			activeVideo.addEventListener('ended', () => {
+				profileVideoSwiper.slideNext()
+			})
+		}
+	})
 </script>
 @endsection

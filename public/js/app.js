@@ -241,7 +241,7 @@ function close_popup() {
 $('.header-open-close').on('click', () => {
 	const obj = $('.slider-menu'),
 		width = $('body').width()
-console.log(width)
+	console.log(width)
 	// if (width > 850) {
 	if (width > 1124) {
 		if (obj.hasClass('open'))
@@ -398,7 +398,7 @@ $('body').on('click', '.backbtn-icon', function () {
 	close_mrzv_popup()
 	constriction_chat('full')
 
-	
+
 	$('body').css('width', '100%')
 })
 
@@ -645,9 +645,9 @@ $(document).ready(function () {
 // 	let i = $(e.target)[0]
 // 	if ($(i).is(":focus")) {
 // 		$(i).parent().addClass('focus')
-		
+
 // 	}
-	
+
 // })
 
 
@@ -674,7 +674,7 @@ countDown()
 
 
 
-$('.btn-save-profile').click(()=> {
+$('.btn-save-profile').click(() => {
 
 	userPofile = {
 		'user-nick': $($('.user-nick')[0]).val(),
@@ -685,6 +685,6 @@ $('.btn-save-profile').click(()=> {
 	console.log(userPofile)
 })
 
-$('.input').change(function(e) {
+$('.input').change(function (e) {
 	console.log(e.target)
 });

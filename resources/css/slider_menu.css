@@ -23,6 +23,8 @@
 }
 
 .slider-menu .logo {
+    display: flex;
+    align-items: center;
     width: 100%;
 }
 .slider-menu .logo span {
@@ -31,6 +33,22 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
+}
+.slider-menu .logo .logo-short {
+    margin-right: 15px;
+}
+.slider-menu .logo-full {
+    position: relative;
+}
+.slider-menu .logo-full::after {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    content: '';
+    display: inline-block;
+    width: 66px;
+    height: 1px;
+    background: #000;
 }
 nav {
     display: flex;
@@ -104,7 +122,7 @@ nav .icons,
     width: 40px;
     height: 40px
 }
-
+nav a.active .icons:not(.premium-icon),
 nav a:hover .icons:not(.premium-icon) {
     background-color: #dbea8d
 }

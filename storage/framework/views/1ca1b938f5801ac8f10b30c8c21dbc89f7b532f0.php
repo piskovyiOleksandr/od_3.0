@@ -82,6 +82,7 @@
 		height: 100%;
 		object-fit: cover;
 	}
+
 	.profilePhotoSwiperTop .swiper-pagination,
 	.profileVideoSwiper .swiper-pagination {
 		bottom: initial;
@@ -187,8 +188,8 @@
 						<video onloadeddata="init_stories_video_duration(this)" preload="auto" poster="" paused="true" muted="true">
 							<source src="<?= $item['src'] ?>" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
 						</video>
-						<div class="video-timer"></div>
-						<div class="icon-play"></div>
+						<!-- <div class="video-timer"></div>
+						<div class="icon-play"></div> -->
 					</div>
 					<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					<?php endif; ?>
@@ -264,7 +265,7 @@
 				<div class="swiper-wrapper">
 					<?php $__currentLoopData = $stories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 					<div class="swiper-slide">
-						<video id="video-<?= $item['id'] ?>" preload="metadata" playsinline="" autoplay="" controls="" controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture="">
+						<video id="video-<?= $item['id'] ?>" controls preload="metadata" playsinline="" controlslist="nofullscreen nodownload noremoteplayback" disablepictureinpicture="">
 							<source src="<?= $item['src'] ?>" type="video/mp4">
 							</source>
 						</video>
@@ -292,13 +293,11 @@
 <?php $__env->stopSection(); ?>
 
 
-<?php $__env->startSection('script'); ?>
+
+<script src="<?php echo e(asset('/js/jquery.3.6.0.js')); ?>" type="text/javascript" defer></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<link rel="stylesheet" href="<?php echo e(asset('/css/video-js.min.css')); ?>" />
-
-
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="<?php echo e(asset('/js/video.min.js')); ?>"></script>
+
 <script>
 	let profilePhotoSwiperBottom = new Swiper(".profilePhotoSwiperBottom", {
 		loop: true,
@@ -342,7 +341,19 @@
 			prevEl: ".swiper-button-prev.pvs-btn-prev",
 		},
 		loop: true,
-	});
+		on: {
+			transitionEnd: function() {
+				let activeVideo = $('.profileVideoSwiper .swiper-slide-active video:visible')[0]
+
+				console.log('undefined')
+				if (activeVideo != undefined) {
+					$('video').trigger('pause')
+					activeVideo.play()
+					console.log('not undefined')
+				}
+			},
+		},
+	})
+	
 </script>
-<?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout/layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\_aproachX\OD_3.0_all\OD_3.0_mix_dev_swiper\resources\views/profile_page/profile.blade.php ENDPATH**/ ?>
